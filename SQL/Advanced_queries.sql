@@ -78,8 +78,8 @@ LIMIT 3
 -- 11)Rank books based on total quantity sold (best-selling books),
 SELECT b.book_id,
 	   b.title,
-	   SUM(o.total_amount) AS best_selling_books,
-	   RANK()OVER(ORDER BY sum(o.total_amount)DESC) AS rn 
+	   SUM(o.quantity) AS best_selling_books,
+	   RANK()OVER(ORDER BY sum(o.quantity)DESC) AS rn 
 FROM orders o 
 JOIN books b ON o.book_id = b.book_id 
 GROUP BY b.book_id, b.title
@@ -89,8 +89,8 @@ GROUP BY b.book_id, b.title
 SELECT * 
 	FROM(
 		SELECT b.book_id, b.title, b.genre, 
-			SUM(o.total_amount) AS top_selling_books,
-			ROW_NUMBER()OVER(PARTITION BY b.genre ORDER BY SUM(o.total_amount)DESC) AS rn
+			SUM(o.quantity) AS top_selling_books,
+			ROW_NUMBER()OVER(PARTITION BY b.genre ORDER BY SUM(o.quantity)DESC) AS rn
 		FROM orders o 
 	JOIN books b ON o.book_id = b.book_id 
 GROUP BY b.book_id, b.title, b.genre
