@@ -110,6 +110,7 @@ The **Orders table acts as a bridge** connecting Customers and Books.
 
  📊 Key Insights
 
+* 'Integrated secondary access' is a top selling book with 28 total quantity sold
 * Fiction genre contributes significantly to total sales
 * A small group of customers generates a large portion of revenue
 * Certain books have low remaining stock and require restocking
