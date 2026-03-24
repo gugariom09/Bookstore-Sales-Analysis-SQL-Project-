@@ -133,8 +133,8 @@ The **Orders table acts as a bridge** connecting Customers and Books.
 
 ```text
 bookstore-sql-analysis/
+│── SQL/
 │── data/
-│── sql/
 │── screenshot/
 │── README.md
 ```
